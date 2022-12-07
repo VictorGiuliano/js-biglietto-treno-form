@@ -34,7 +34,8 @@ button.addEventListener ('click', function() {
 let costo = Km * tariffa;
 let sconto = (costo * 20 ) /100;
 let rateName = 'Tariffa Ordinaria';
-
+const coach = '9';
+const pnr = '9321';
 
     if(!Name || isNaN(Km) || Km < 1){
         alert ("Valori non validi");
@@ -44,13 +45,16 @@ let rateName = 'Tariffa Ordinaria';
         if(Age < 18){
             costo = costo - sconto;
             rateName = "Tariffa Giovani"
+            
         }else if(Age > 65){
             sconto = (costo * 40) /100;
             costo = costo - sconto;
             rateName = "Tariffa Anziani"
         }   
     
-        paragraphElement.innerText += costo.toFixed(2) + '€ ' ;
+        priceElement.innerText += costo.toFixed(2) + '€ ' ;
         proprietyElement.innerText = Name;
-    
+        paragraphElement.innerText = rateName;
+        pnrElement.innerText = pnr;
+        coachElement.innerText = coach;
 });
