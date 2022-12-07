@@ -9,12 +9,20 @@ Sulla base di queste informazioni dovrà calcolare il prezzo totale del bigliett
 
 
 
-const nameUser = document.getElementById('name');
-const Kms = document.getElementById('input');
-const Ages = document.getElementById('Age-user');
-const button = document.getElementById('button');
-const paragraph = document.getElementById('cost');
-const parag = document.getElementById('propriety');
+const nameUserElement = document.getElementById('name');
+const KmsElement = document.getElementById('input');
+const AgesElement = document.getElementById('Age-user');
+const buttonElement = document.getElementById('button');
+
+
+
+
+const paragraphElement = document.getElementById('cost');
+const proprietyElement = document.getElementById('propriety');
+const coachElement = document.getElementById('coach');
+const pnrElement = document.getElementById('pnr');
+const priceElement = document.getElementById('price');
+
 
 
 let tariffa = 0.21;
@@ -22,9 +30,9 @@ let tariffa = 0.21;
 
 // Click del bottone
 button.addEventListener('click', function() {   
-    const Name = nameUser.value;
-    const Km = parseInt(Kms.value.trim());
-    const Age = parseInt(Ages.value.trim());
+    const Name = nameUserElement.value;
+    const Km = parseInt(KmsElement.value.trim());
+    const Age = parseInt(AgesElement.value.trim());
     
 let costo = Km * tariffa;
 let sconto = (costo * 20 ) /100;
@@ -39,7 +47,7 @@ let sconto = (costo * 20 ) /100;
             costo = costo - sconto;
         }   
     }
-        paragraph.innerText += costo.toFixed(2) + '€ ' ;
-        parag.innerText = Name + '';
+        paragraphElement.innerText += costo.toFixed(2) + '€ ' ;
+        proprietyElement.innerText = Name;
     
 });
