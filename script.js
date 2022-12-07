@@ -40,6 +40,6 @@ let sconto = (costo * 20 ) /100;
         }   
     }
         paragraph.innerText += costo.toFixed(2) + '€ ' ;
-        parag.innerText = Name;
+        parag.innerText = Name + '';
     
 });
